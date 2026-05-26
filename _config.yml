@@ -20,6 +20,7 @@ markdown: kramdown
 permalink: /:year/:month/:day/:title/
 timezone: Asia/Shanghai
 show_excerpts: true
+future: true
 
 # minima theme settings
 minima:
