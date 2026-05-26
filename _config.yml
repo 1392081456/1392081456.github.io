@@ -1,0 +1,44 @@
+# Site
+title: Colorful White — Defensive Security Notes
+description: >-
+  Detection engineering, vulnerability research, and adversarial ML from a
+  defender's point of view. Personal research notebook of Colorful White
+  (Guangdong University of Technology).
+url: "https://1392081456.github.io"
+baseurl: ""
+lang: en
+
+# Author
+author:
+  name: Colorful White
+  affiliation: Guangdong University of Technology (GDUT)
+  email: colorfulwhitez@gmail.com
+
+# Build
+theme: minima
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+timezone: Asia/Shanghai
+show_excerpts: true
+
+# minima theme settings
+minima:
+  date_format: "%Y-%m-%d"
+  skin: auto
+  social_links:
+    - { platform: github,   user_url: "https://github.com/1392081456" }
+    - { platform: rss,      user_url: "/feed.xml" }
+
+# Plugins (allow-listed by GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - README.md
