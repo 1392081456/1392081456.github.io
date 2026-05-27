@@ -5,6 +5,8 @@ date: 2026-05-28 10:00:00 +0800
 categories: [detection-engineering, methodology]
 tags: [vulhub, cve-triage, prioritization, soc-economics]
 related_posts:
+  - three-2024-cves-detection-signal-quality
+  - geoserver-cve-2024-36401-anatomy
   - cve-to-sigma-30min
   - pwn-to-falco-rules
 ---
