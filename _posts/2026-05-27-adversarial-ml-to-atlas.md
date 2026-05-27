@@ -4,6 +4,9 @@ title: "Adversarial ML Attack Patterns Mapped to MITRE ATLAS — A Defender's Re
 date: 2026-05-27 09:30:00 +0800
 categories: [detection-engineering, adversarial-ml, methodology]
 tags: [mitre-atlas, gan, black-box-attack, substitute-model, ml-security]
+related_posts:
+  - cve-to-sigma-30min
+  - picking-cves-detection-triage
 ---
 
 In 2025 I published [a peer-reviewed paper](https://doi.org/10.3778/j.issn.1002-8331.2311-0227) on data-free black-box adversarial attacks against image classifiers. The paper is firmly in the offensive ML literature — it shows that with **only API-level query access** to a target model and **no access to its training data**, an attacker can train a GAN-based substitute model and use it to craft transfer adversarial examples that succeed against deployed services (Microsoft Azure included) at greater than 78% rate.

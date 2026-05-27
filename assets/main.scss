@@ -1,0 +1,309 @@
+---
+# Front-matter required so Jekyll processes this as SCSS
+---
+
+// ============================================================================
+// Colorful White — academic-light theme
+// Project Zero × personal-research-notebook hybrid.
+// All CSS is hand-rolled; minima's _sass is NOT imported.
+// ============================================================================
+
+$font-serif: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond",
+             "Baskerville", "Times New Roman", "Droid Serif", Times, serif,
+             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+             "Helvetica Neue", Arial, sans-serif;
+$font-mono:  "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New", monospace;
+
+$color-bg:       #fffefb;       // warm off-white (paper)
+$color-text:     #1a1a1a;       // near-black ink
+$color-muted:    #6a6a6a;       // meta info
+$color-rule:     #e3e3e0;       // hairlines
+$color-accent:   #0b5fae;       // calm academic blue
+$color-accent-h: #c0392b;       // hover (subtle warm)
+$color-code-bg:  #f6f5f1;       // tinted off-white for code
+
+$measure: 38rem;                // ~680px — Project-Zero comfortable reading width
+$measure-wide: 44rem;           // home / topics listing
+
+// ---------- reset & base ----------
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+@media (min-width: 700px) { html { font-size: 18px; } }
+
+body {
+  margin: 0;
+  background: $color-bg;
+  color: $color-text;
+  font-family: $font-serif;
+  font-feature-settings: "kern", "liga", "onum";
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------- layout ----------
+.site-shell {
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+.site-shell.wide { max-width: $measure-wide; }
+
+// ---------- masthead ----------
+.site-header {
+  border-bottom: 1px solid $color-rule;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+}
+.site-title {
+  font-family: $font-sans;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: $color-text;
+  text-decoration: none;
+}
+.site-title:hover { color: $color-accent; }
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 1.5rem;
+  font-family: $font-sans;
+  font-size: 0.9rem;
+}
+.site-nav-links a {
+  color: $color-muted;
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+.site-nav-links a:first-child { margin-left: 0; }
+.site-nav-links a:hover { color: $color-accent; }
+.site-tagline {
+  font-family: $font-sans;
+  font-size: 0.82rem;
+  color: $color-muted;
+  margin-top: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+// ---------- headings ----------
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0d0d0d;
+  margin: 2.2em 0 0.6em;
+}
+h1 { font-size: 1.9rem; margin-top: 0; }
+h2 { font-size: 1.4rem; margin-top: 2.4em; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: $color-muted; }
+
+// ---------- prose ----------
+p { margin: 0 0 1.2em; }
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(11, 95, 174, 0.25);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+a:hover { color: $color-accent-h; border-bottom-color: $color-accent-h; }
+
+strong { color: #000; font-weight: 600; }
+em { font-style: italic; }
+
+ul, ol { margin: 0 0 1.2em; padding-left: 1.5em; }
+li { margin: 0.25em 0; }
+li > ul, li > ol { margin: 0.25em 0; }
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-rule;
+  margin: 2.5em 0;
+}
+
+blockquote {
+  border-left: 3px solid $color-rule;
+  padding: 0.1em 0 0.1em 1.1em;
+  margin: 1.4em 0;
+  color: #4a4a4a;
+  font-style: italic;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+// ---------- code ----------
+code {
+  font-family: $font-mono;
+  font-size: 0.88em;
+  background: $color-code-bg;
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+  color: #2a2a2a;
+}
+pre {
+  font-family: $font-mono;
+  font-size: 0.86em;
+  background: $color-code-bg;
+  border: 1px solid $color-rule;
+  border-radius: 4px;
+  padding: 0.9em 1em;
+  overflow-x: auto;
+  line-height: 1.55;
+  margin: 1.4em 0;
+}
+pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+// ---------- tables ----------
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4em 0;
+  font-size: 0.92em;
+  font-family: $font-sans;
+}
+th, td {
+  border-bottom: 1px solid $color-rule;
+  padding: 0.55em 0.7em;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  background: #faf9f5;
+  border-bottom-width: 2px;
+}
+
+// ---------- post list (home & topics) ----------
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li { margin: 1.8em 0; }
+.post-list .post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25em;
+  line-height: 1.3;
+}
+.post-list .post-title a {
+  color: $color-text;
+  border-bottom: none;
+}
+.post-list .post-title a:hover { color: $color-accent; }
+.post-list .post-meta {
+  font-family: $font-sans;
+  font-size: 0.82rem;
+  color: $color-muted;
+  margin-bottom: 0.5em;
+}
+.post-list .post-excerpt {
+  color: #333;
+  font-size: 0.98rem;
+}
+.post-list .post-excerpt p { margin: 0; }
+
+// ---------- single-post meta + tags ----------
+.post-header { margin-bottom: 2em; }
+.post-title-main {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+.post-meta-bar {
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  color: $color-muted;
+  border-top: 1px solid $color-rule;
+  border-bottom: 1px solid $color-rule;
+  padding: 0.65em 0;
+  margin: 1em 0 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+  align-items: baseline;
+}
+.post-meta-bar time { color: $color-muted; }
+.post-meta-bar .post-tags a {
+  color: $color-muted;
+  border-bottom: none;
+  margin-right: 0.5em;
+}
+.post-meta-bar .post-tags a::before { content: "#"; color: #c0c0c0; }
+.post-meta-bar .post-tags a:hover { color: $color-accent; }
+
+// ---------- related posts ----------
+.post-related {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 1px solid $color-rule;
+}
+.post-related h2 {
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-muted;
+  margin: 0 0 1em;
+  font-weight: 600;
+}
+.post-related ul { list-style: none; padding: 0; margin: 0; }
+.post-related li { margin: 0.5em 0; }
+.post-related a {
+  border-bottom: none;
+  color: $color-text;
+}
+.post-related a:hover { color: $color-accent; }
+.post-related .related-meta {
+  font-family: $font-sans;
+  font-size: 0.78rem;
+  color: $color-muted;
+  margin-left: 0.5em;
+}
+
+// ---------- topics (category groupings) ----------
+.topic-group { margin-bottom: 3em; }
+.topic-group h2 {
+  font-family: $font-sans;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $color-muted;
+  border-bottom: 1px solid $color-rule;
+  padding-bottom: 0.4em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+// ---------- footer ----------
+.site-footer {
+  margin-top: 5em;
+  padding-top: 1.5em;
+  border-top: 1px solid $color-rule;
+  font-family: $font-sans;
+  font-size: 0.8rem;
+  color: $color-muted;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5em 1em;
+}
+.site-footer a { color: $color-muted; border-bottom: none; }
+.site-footer a:hover { color: $color-accent; }
+
+// ---------- small screens ----------
+@media (max-width: 480px) {
+  .site-shell { padding: 1.5rem 1rem 3rem; }
+  h1, .post-title-main { font-size: 1.55rem; }
+  h2 { font-size: 1.2rem; }
+  .post-meta-bar { font-size: 0.78rem; }
+}

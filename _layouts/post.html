@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article>
+
+  <header class="post-header">
+    <h1 class="post-title-main">{{ page.title | escape }}</h1>
+
+    <div class="post-meta-bar">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: site.minima.date_format | default: "%Y-%m-%d" }}
+      </time>
+
+      {%- assign words = content | number_of_words -%}
+      {%- assign reading = words | divided_by: 200 | plus: 1 -%}
+      <span>{{ reading }} min read</span>
+
+      {%- if page.categories.size > 0 -%}
+        <span>{{ page.categories | join: " &middot; " }}</span>
+      {%- endif -%}
+
+      {%- if page.tags.size > 0 -%}
+        <span class="post-tags">
+          {%- for tag in page.tags -%}
+            <a href="{{ '/topics/' | relative_url }}#tag-{{ tag | slugify }}">{{ tag }}</a>
+          {%- endfor -%}
+        </span>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- if page.related_posts and page.related_posts.size > 0 -%}
+    <aside class="post-related">
+      <h2>Related</h2>
+      <ul>
+        {%- for slug in page.related_posts -%}
+          {%- assign rp = site.posts | where_exp: "p", "p.path contains slug" | first -%}
+          {%- if rp -%}
+            <li>
+              <a href="{{ rp.url | relative_url }}">{{ rp.title | escape }}</a>
+              <span class="related-meta">{{ rp.date | date: "%Y-%m-%d" }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </aside>
+  {%- endif -%}
+
+</article>

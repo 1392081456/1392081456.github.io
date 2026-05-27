@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  {%- feed_meta -%}
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <div class="site-shell{% if page.wide %} wide{% endif %}">
+
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | default: site.author.name }}</a>
+        <div class="site-nav-links">
+          <a href="{{ '/' | relative_url }}">Posts</a>
+          <a href="{{ '/topics/' | relative_url }}">Topics</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </div>
+      </nav>
+      <p class="site-tagline">Detection &middot; Adversarial ML &middot; CTF &middot; Methodology</p>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.title }}.
+        Affiliation: {{ site.author.affiliation }}.</span>
+      <span>
+        <a href="https://github.com/1392081456">GitHub</a> &middot;
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a> &middot;
+        <a href="mailto:{{ site.author.email }}">Email</a>
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>

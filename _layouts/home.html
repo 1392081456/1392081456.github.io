@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<article>
+  {{ content }}
+
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+      <li>
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.minima.date_format | default: "%Y-%m-%d" }}</time>
+          {%- if post.categories.size > 0 -%}
+            &nbsp;&middot;&nbsp;{{ post.categories | join: " &middot; " }}
+          {%- endif -%}
+        </div>
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        <div class="post-excerpt">{{ post.excerpt }}</div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</article>

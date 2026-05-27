@@ -4,6 +4,9 @@ title: "From CTF Heap Pwn to Falco Rules — Reading Memory Corruption as a Defe
 date: 2026-05-26 16:30:00 +0800
 categories: [detection-engineering, methodology]
 tags: [falco, sysmon, ebpf, glibc, tcache, heap-exploitation]
+related_posts:
+  - cve-to-sigma-30min
+  - picking-cves-detection-triage
 ---
 
 A common pushback I get when people see my GitHub: *"You spend a lot of time on CTF pwn writeups. How is heap exploitation `defensive` work?"* It's a fair question, and the honest answer takes a while. This post is the long version.

@@ -4,6 +4,9 @@ title: "How I Pick CVEs to Reproduce — Detection Engineering as Triage"
 date: 2026-05-28 10:00:00 +0800
 categories: [detection-engineering, methodology]
 tags: [vulhub, cve-triage, prioritization, soc-economics]
+related_posts:
+  - cve-to-sigma-30min
+  - pwn-to-falco-rules
 ---
 
 [vulhub](https://github.com/vulhub/vulhub) is the canonical catalogue of "vendor-patched CVEs that ship with a `docker-compose.yml`" — at the time of writing it covers somewhere north of 200 vulnerabilities across roughly 100 products. I have written full reproduction-plus-detection writeups for **23** of them, packaged as the [labs chapter](https://github.com/1392081456/ctf-notes/tree/main/labs). The other ~180 I have not touched.
