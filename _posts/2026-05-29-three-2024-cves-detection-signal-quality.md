@@ -5,6 +5,7 @@ date: 2026-05-29 10:00:00 +0800
 categories: [detection-engineering, methodology]
 tags: [cve-triage, signal-quality, jenkins, teamcity, geoserver, sigma]
 related_posts:
+  - testing-four-axis-rubric-against-nexus-4956
   - geoserver-cve-2024-36401-anatomy
   - cve-to-sigma-30min
   - picking-cves-detection-triage
