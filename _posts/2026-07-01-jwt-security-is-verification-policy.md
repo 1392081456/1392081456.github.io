@@ -14,6 +14,11 @@ JWTs are easy to mistake for security because they look structured and cryptogra
 
 The eight PortSwigger JWT labs move through the usual failure modes: no verification, `alg:none`, weak HMAC secrets, attacker-controlled keys, `kid` injection, and algorithm confusion.
 
+This series was re-run and live-verified on 2026-05-30 as 8/8 solved. The
+no-exposed-key lab is worth calling out: public key recovery from several
+valid RS256 signatures was enough to trigger HS256 confusion without recovering
+the private key.
+
 ## Decode is not verify
 
 The first failure is using a JWT library to parse claims without verifying the signature. If changing:

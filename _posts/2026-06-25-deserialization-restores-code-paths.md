@@ -92,6 +92,8 @@ The final chain combines:
 - Twig SSTI in a property;
 - `file_exists()` as the trigger.
 
+In one live instance the avatar endpoint appended `.jpg`, so the stable wrapper path was `phar://wiener.jpg/x`: the archive name satisfies the uploaded filename, and the internal path segment forces PHAR parsing.
+
 That is why deserialization review should include file wrappers and upload paths, not just explicit deserializer calls.
 
 ## Defender notes

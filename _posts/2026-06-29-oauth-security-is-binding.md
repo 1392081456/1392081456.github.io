@@ -21,6 +21,10 @@ The six PortSwigger OAuth labs are about binding:
 - access token to audience;
 - postMessage target to origin.
 
+This series was re-run and live-verified on 2026-05-30 as 6/6 solved. One
+operational detail mattered: the Academy exploit server expected the stored
+response fields to be submitted again when delivering to the victim.
+
 ## The client must verify the subject
 
 In the implicit-flow lab, the browser sends profile data to:

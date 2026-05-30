@@ -18,6 +18,11 @@ upload -> store -> serve -> execute
 
 The seven PortSwigger labs show that breaking any one of those boundaries can be enough.
 
+This series was re-run and live-verified on 2026-05-30 as 7/7 solved. The
+polyglot case used a valid JPEG metadata segment containing PHP, and the race
+case was won by pairing repeated uploads with high-rate reads of the public
+avatar path.
+
 ## MIME is not validation
 
 The simple cases accept a PHP file directly, or trust the request's multipart MIME type:

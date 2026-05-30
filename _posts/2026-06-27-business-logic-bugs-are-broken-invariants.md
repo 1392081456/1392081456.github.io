@@ -30,6 +30,10 @@ Across the twelve PortSwigger labs, the broken invariants are plain:
 
 Once written this way, each lab becomes a search for where the application forgot to enforce the rule.
 
+The series was re-run and live-verified on 2026-05-30 as 12/12 solved. The
+gift-card lab is a useful reminder that observability matters: the profitable
+codes were delivered through the Academy email client, not the order page.
+
 ## Money bugs are boundary bugs
 
 The early shopping labs are variations on server-side authority.
